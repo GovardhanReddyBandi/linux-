@@ -54,4 +54,30 @@ root
 
 *AS A NORMAL USER WE CAN SWITCH TO ANY LOCATION. BUT WHERE EVER TO CREATE FILE(OR)FOLDER AND DELETE A FILE (OR)FOLDER WILL NOT POSSIBLE BECAUSE EC2-USER IS ANORMAL USER.
 *FOR A NORMAL USER HAVE "HOME" IN LINUX(/) WE CAN CREATE (OR)DELETE A FILE OR FOLDERIN NORMAL USER =/HOME/EC2-USER
+what is a default home dir for normal user?
+	/home/username
+what is default home dir for root user?
+	/root
+sudo -i is a command used for to switch normal user to root user
+for normal user(ec2-user) $, root user #
+root user can crete and delete any file or folder where ever we want
+*EX:if we want to create a file in opt 
+	login to ec2 service in putty
+	switch to root user sudo -i
+	change directory to / cd /
+	pwd it shows present working directory
+	ls to list all files/folder in /
+	cd /opt change dirctory to opt
+	touch <filename> to create a empty file
+	ls it list the file in opt now you can see the file which was created by u
+EX:if we want to create a folder in opt 
+	login to ec2 service in putty
+	switch to root user sudo -i
+	change directory to / cd /
+	pwd it shows present working directory
+	ls to list all files/folders in /
+	cd /opt change dirctory to opt
+	mkdir <dirname> to create a  directory/folder
+	ls it list the file/folders in opt now you can see the folder which was created by u.
+
 
