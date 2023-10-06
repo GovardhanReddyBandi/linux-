@@ -1,0 +1,107 @@
+LINUX COMMANDS
+1. TO CREATE A EMPTY FILE 
+	"touch"
+	syntax :touch <filename>
+2. TO CREATE A EMPTY FOLDER/DIR
+	"mkdir"
+	syntax: mkdir <dir name>
+3.TO CREATE A EMPTY FILE AT A TIME
+	syntax: touch file1 file2 file3
+4.TO CREATE A EMPTY FOLDER/DIR AT ATIME
+	syntax: mkdir dir1 dir2 dir3
+*********NOTE****
+IF A ANY LINE START WITH "-" i,e FILE
+IF A ANY LINE START WITH "d" i,e DIRECTORY
+
+*touch -c: this command is used to check whether a file is created or not. if not created then don't create it
+	syntax: touch -c <filename> 
+***************************************************************************
+*****************exercises*************************
+1. create a file from file1 to file101 at a time
+	syntax: touch <filename{start..end}>
+	ex: touch file{1..101}
+2.create a directories from dir1 to dir101 at a time
+        syntax: mkdir <dirname{start..end}>
+        ex: mkdir dir{1..101}
+***************************************************************************
+
+comands
+*pwd: it stands for present working directory
+
+*rm : to remove/delete a file/folder
+syntax: rm <filename> for a file
+syntax: rm -r <directoryname> for a folder. here -r stands for recursively
+****examples***
+1. how to DELETE a file5,file10
+command: rm file5 file10
+2. how to DELETE a dir5,dir10
+command: rm -r dir5 dir10
+
+3.how to DELETE a file with in a range
+command: rm file{1..100} (to delete a files from file1 to file100 at a time)
+4.how to DELETE a folder/dir with in a range
+command: rm -r dir{1..100} (to delete a dir from dir1 to dir100 at a time)
+**********************************
+man command: it is used to know the usage of commnds
+for example: man mkdir(to create a dir/folder)
+	     man touch(to create a empty file)
+@@@@@@@@@@@@@@@@
+*TO CREATE A FILE THEY ARE 3 COMMANDS 
+1.touch(we can create only empty files)
+2.cat(EMPTY FILE,DATA FILE,WE CAN ADD DATA TO EXISTING FILE BUT WE CAN'T MODIFY DATA INSIDE THE DATA FILE)
+3.vi
+  
+2.CAT
+	it stands for concatenate
+*here we can create a 1 file at a time
+*to create a empty file syntax:cat > filename (empty file and ctrl+d to save it)
+*to create a data file syntax: cat > filename <"write data here"> and ctrl+d to save it
+*to check the data inside the file syntax: cat filename
+*to add/append extra data to an existing file syntax: cat >> filename <"write data here"> and ctrl+d
+****NOTE*****
+WE CAN'T NOT MODIFY THE DTA INSIDE THE FILES
+
+
+3.VIUAL EDITOR(vi)
+	vi= touch+cat+modify the file
+syntax: vi filename
+	inside this they have 3 modes
+	a.command mode(default mode)
+	b.insert mode (i)
+	c.colon mode (at saving/reject file syntax:esc :wq(to save and quit),esc :q (without save it will quit))
+****note***** command: ! (indicates forecefully)
+****note***** deafault mode is command mode
+
+
+********************************************************
+commands 
+cd: it stand for change directory
+	syntax: cd <dirname> (to go in to directory)
+	syntax: cd.. (to get back)
+
+cp: it stands for copy
+	syntax: cp filename1 filename2 (filename1 is a source and filename2 is destination)
+	to copy a dir without overide we use -r (recursevily)ex:cp -r dir1 dir2
+
+mv: it stands for move
+    here we rename the file and folderand
+    we can move the files or directories for one location to other location
+	syntax: mv file1 file5 (to rename the file1 to file5)
+	syntax: mv dir1 dir5 (to move a dir "dir1 is source and dir5 is destination")
+
+date: it will display the day,date,month and time according to servere created location
+
+echo: it like a print command
+	ex: echo "hi welcome to devops"
+who -b =boot(starting the server)
+	when my server is started
+	syntax: who -b
+	it displays: system boot year-month-date time
+
+whoami:who currently working (or) who currently executing commands (ec2-user)
+
+logname: who intially log-in into the server(first login) (<ec2-user>)
+
+sudo -i: when comand given sudo -i it will switch as a root user
+uname: when command given uname it will get where r you
+

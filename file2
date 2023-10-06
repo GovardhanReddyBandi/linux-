@@ -1,0 +1,57 @@
+*************************LS ALL OPTIONS*****************
+ls -a list all files including hidden files starting with "."
+ls -d list all dir including "*/."
+ls -l list with long format -shows permissions
+ls -f append indicator (one of */=>@1)to entries
+ls -lh this command will show you the file size in human readable format
+ls -r list in reverse order
+ls -i list files in inode(index)numbers
+ls -ltr view reverse output order by date
+ls -t sort by time and date
+ls -n it is used to print out group id and owner id instaead of their names
+ls -m a list of entires seperated by commas should fill the width.
+ls -g this alklow you to execute the owner and group information coloums
+ls -q force printing of non-ghraphic character in file name as the character"?!,"
+ls -Q place double quation around the entry name
+*************************************************************************
+
+
+/ it stands for FORWARDS SLASH
+\ it stands for BACKWARD SLASH
+
+IN WINDOWS DEFAULT USER ARE ADMIN(ADMINISTARATOR) he we can do what ever we want
+	IN WINDOWS
+				C
+DESKTOPS	DOWNLODS	LOCALDISK D	LOCALDISK E 	ETC
+
+IN LINUX default user are 1)root(like a ADMIN)(he can insttall,delet,create sof)
+			  2)ec2-user (normal user)
+IN LINUX
+			/
+root	home	opt	mnt	bin	sbin	tmp 
+
+IN LINUX 
+syntax: cd / then ls
+output : bin dev home lib media opt root sbin sys usr boot etc lib local mnt proc run srv tmp var
+
+bin= it contains commands used by all user (including root)
+
+sbin = it stands for super bin = it will also contains the commands these commands only used by root
+
+opt= optinal = we can store the tirdparty softwares(optinal agreement)
+mnt=mount= drives(Gdrives all under comp under mnt)
+etc= it contains all configuration files
+
+proc =it contains all the process
+
+boot = to start the server/bootup it requires many file to run =bootable files
+
+var = variables=it contains all variable/log
+
+home
+
+root
+
+*AS A NORMAL USER WE CAN SWITCH TO ANY LOCATION. BUT WHERE EVER TO CREATE FILE(OR)FOLDER AND DELETE A FILE (OR)FOLDER WILL NOT POSSIBLE BECAUSE EC2-USER IS ANORMAL USER.
+*FOR A NORMAL USER HAVE "HOME" IN LINUX(/) WE CAN CREATE (OR)DELETE A FILE OR FOLDERIN NORMAL USER =/HOME/EC2-USER
+
