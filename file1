@@ -46,10 +46,10 @@ man command: it is used to know the usage of commnds
 for example: man mkdir(to create a dir/folder)
 	     man touch(to create a empty file)
 @@@@@@@@@@@@@@@@
-*TO CREATE A FILE THEY ARE 3 COMMANDS 
+****TO CREATE A FILE THEY ARE 3 COMMANDS*****
 1.touch(we can create only empty files)
 2.cat(EMPTY FILE,DATA FILE,WE CAN ADD DATA TO EXISTING FILE BUT WE CAN'T MODIFY DATA INSIDE THE DATA FILE)
-3.vi
+3.vi (VIUAL EDITOR)
   
 2.CAT
 	it stands for concatenate
@@ -84,7 +84,7 @@ cp: it stands for copy
 	to copy a dir without overide we use -r (recursevily)ex:cp -r dir1 dir2
 
 mv: it stands for move
-    here we rename the file and folderand
+    here we rename the file and folder and
     we can move the files or directories for one location to other location
 	syntax: mv file1 file5 (to rename the file1 to file5)
 	syntax: mv dir1 dir5 (to move a dir "dir1 is source and dir5 is destination")
@@ -104,4 +104,59 @@ logname: who intially log-in into the server(first login) (<ec2-user>)
 
 sudo -i: when comand given sudo -i it will switch as a root user
 uname: when command given uname it will get where r you
+Kernel: It is a core component in any server i,e Heart of the any server . Kernel is a going to manage the system Resources = something called Memory, Harddisk,cpu,etc.
+shell: It  is a command interprinter (Interprinter - something like compiler[high lang to low lang and viceversa]
+	echo $0 (to check current/working shell)
+	to check default shell echo $SHELL   (bourne against shell - bash shell= default shell)
+	Z shell
+	K shell
+	C shell = csh
+	*to change Bash Shell to Bourne Shell syntax: sh //output:sh-4.2$
+	*to get back command: exit
+***command modes***
+	$ courser to go end of line
+	6dd "to delete the 6 lines"
+****coloun mode***								****saving ***
+	esc :w (OR) x to save file					x or w =save
+	esc :q to quite the file					q = quite
+	esc : wq to save and quite					q! =quite forcefully
+note :default mode is command mode					wq = save and quite
+***KEY STORE & USES****							wq! = save and quite forcefully
+	K (moves the courser up)
+	J (moves the cursor down)
+	H (moves the cursor left)
+	L (moves the cursor right)
 
+	*s =search
+	*i = means fom first line
+	*$ = means from last line
+	*g = globally ("if patterns is occurance mulitiple times it will change all occurence")
+	*se nu = set numbers
+	g/patter i/s/i pattern 2/g to replace sting word for Global
+	| (pipe) = will combine the one or more than one ,command:|(pipe)
+EX: after opening the file with vi my cursor by default cursur will start of first line first word first character but in want my cursor at 15 th line while opening the file with vi
+	ans: vi <filename> + 15
+EX: to display cursor on 15th in the filename where total lines =20
+	ans: head -13 <filename> | tail -1
+			OR
+	    : tail -10 <filename> | head -3
+*****key stores and Actions***
+keystore	Actions
+i		Insert at cursur (goes into insert mode)
+A		write after cursor (goes into insert mode)
+a		write at the end of line (goes into insert mode)
+ESC		Terminate insert mode
+u		undo last changes
+O		open a new line (goes into insert mode)
+nadd		nDelete lines
+5dd		delete 5 lines
+D		Delete the content of line after the cursor
+dw		delete word
+3dw		delete 3words
+Cw 		change word
+X		delete character at the cursor
+R		Replace character
+R		overwrite character from cursor onward
+G		go to end of file
+gg		beggining of the file
+$		End of the cursor in present line.
