@@ -1,38 +1,38 @@
 *************************LS ALL OPTIONS*****************
-ls -a list all files including hidden files starting with "."
-ls -d list all dir including "*/."
-ls -l list with long format -shows permissions
-ls -f append indicator (one of */=>@1)to entries
-ls -lh this command will show you the file size in human readable format
-ls -r list in reverse order
-ls -i list files in inode(index)numbers
-ls -ltr view reverse output order by date
-ls -t sort by time and date
-ls -n it is used to print out group id and owner id instaead of their names
-ls -m a list of entires seperated by commas should fill the width.
-ls -g this alklow you to execute the owner and group information coloums
-ls -q force printing of non-ghraphic character in file name as the character"?!,"
-ls -Q place double quation around the entry name
+ls -a (list all files including hidden files starting with ".")
+ls -d (list all dir including "*/.")
+ls -l (list with long format -shows permissions)
+ls -f (append indicator (one of */=>@1)to entries)
+ls -lh (this command will show you the file size in human readable format)
+ls -r (list in reverse order)
+ls -i (list files in inode(index)numbers)
+ls -ltr (view reverse output order by date)
+ls -t (sort by time and date)
+ls -n (it is used to print out group id and owner id instaead of their names)
+ls -m (a list of entires seperated by commas should fill the width.)
+ls -g (this alklow you to execute the owner and group information coloums)
+ls -q (force printing of non-ghraphic character in file name as the character"?!,")
+ls -Q (place double quation around the entry name)
 *************************************************************************
 
 
 / it stands for FORWARDS SLASH
 \ it stands for BACKWARD SLASH
 
-IN WINDOWS DEFAULT USER ARE ADMIN(ADMINISTARATOR) he we can do what ever we want
-	IN WINDOWS
+*IN WINDOWS DEFAULT USER ARE ADMIN(ADMINISTARATOR) he we can do what ever we want
+	***IN WINDOWS***
 				C
 DESKTOPS	DOWNLODS	LOCALDISK D	LOCALDISK E 	ETC
 
-IN LINUX default user are 1)root(like a ADMIN)(he can insttall,delet,create sof)
+*IN LINUX default user are 1)root(like a ADMIN)(he can insttall,delet,create sof)
 			  2)ec2-user (normal user)
-IN LINUX
+***IN LINUX****
 			/
 root	home	opt	mnt	bin	sbin	tmp 
 
-IN LINUX 
+*IN LINUX 
 syntax: cd / then ls
-output : bin dev home lib media opt root sbin sys usr boot etc lib local mnt proc run srv tmp var
+output : bin dev home lib media opt root sbin sys usr boot etc lib local mnt proc run srv tmp var(it will display available files in "/")
 
 bin= it contains commands used by all user (including root)
 
@@ -54,30 +54,36 @@ root
 
 *AS A NORMAL USER WE CAN SWITCH TO ANY LOCATION. BUT WHERE EVER TO CREATE FILE(OR)FOLDER AND DELETE A FILE (OR)FOLDER WILL NOT POSSIBLE BECAUSE EC2-USER IS ANORMAL USER.
 *FOR A NORMAL USER HAVE "HOME" IN LINUX(/) WE CAN CREATE (OR)DELETE A FILE OR FOLDERIN NORMAL USER =/HOME/EC2-USER
-what is a default home dir for normal user?
+***what is a default home dir for normal user?
 	/home/username
-what is default home dir for root user?
+***what is default home dir for root user?
 	/root
-sudo -i is a command used for to switch normal user to root user
+sudo -i (is a command used for to switch normal user to root user)
 for normal user(ec2-user) $, root user #
-root user can crete and delete any file or folder where ever we want
+***root user can crete and delete any file or folder where ever we want
 *EX:if we want to create a file in opt 
 	login to ec2 service in putty
 	switch to root user sudo -i
-	change directory to / cd /
-	pwd it shows present working directory
-	ls to list all files/folder in /
-	cd /opt change dirctory to opt
-	touch <filename> to create a empty file
-	ls it list the file in opt now you can see the file which was created by u
+	 cd / (changes directory to "/")
+	pwd (it shows present working directory)
+	ls (to list all files/folder in "/")
+	cd /opt (change dirctory to opt)
+	touch <filename> (to create a empty file)
+	ls (it list the file in opt now you can see the file which was created by u)
 EX:if we want to create a folder in opt 
 	login to ec2 service in putty
 	switch to root user sudo -i
-	change directory to / cd /
-	pwd it shows present working directory
-	ls to list all files/folders in /
-	cd /opt change dirctory to opt
-	mkdir <dirname> to create a  directory/folder
-	ls it list the file/folders in opt now you can see the folder which was created by u.
-
+	 cd / (change directory to /)
+	pwd (it shows present working directory)
+	ls (to list all files/folders in "/")
+	cd /opt (change dirctory to opt)
+	mkdir <dirname> (to create a  "directory/folder")
+	ls (it list the file/folders in opt now you can see the folder which was created by u.)
+*****PATHS*****
+	1.Absolute Path: it like a "complete path" (ex: cd/opt/filename)
+	2.Relative Path: it like a "near Path" (ex: if we are in opt dir/fold we can enter a file in opt by giving command cd <file/foldername> we can go to that location of file/folder i,e Relative/near Path)
+EX1: if PWD is / we want to go to sbin directory then,
+	synatx: cd sbin  (because / path is a sbin dir) that is called Relative/Near by Path
+EX2:if PWD is any where we want to go to sbin then,
+	syntax:cd /sbin/ then ls (to list files) 	that is called Absolute/Complete Path
 
