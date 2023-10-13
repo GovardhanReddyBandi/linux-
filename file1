@@ -140,6 +140,16 @@ EX: to display cursor on 15th in the filename where total lines =20
 	ans: head -13 <filename> | tail -1
 			OR
 	    : tail -10 <filename> | head -3
+*** HEAD AND TAILS ****
+HEAD: in a file data has to display top 10 lines then command is :head <filename> (default it will diplay top 10)
+		syntax: head -5 <filename> 	//to display top 5 lines
+TAIL: in a file data has to display bottom 10 lines then command is :tail <filename> (default it will diplay bottom 10)
+		syntax: tail -5 <filename> 	//to display bottom 5 lines
+***how to get dynamic data of a file
+	ans: by using tail command we get dynamic data
+	dynamic data:it will change the data when ever we add/remove data in a file lines may incresed/decresed.
+
+
 *****key stores and Actions***
 keystore	Actions
 i		Insert at cursur (goes into insert mode)
@@ -160,3 +170,154 @@ R		overwrite character from cursor onward
 G		go to end of file
 gg		beggining of the file
 $		End of the cursor in present line.
+
+
+*************************LS ALL OPTIONS*****************
+ls -a (list all files including hidden files starting with ".")
+ls -d (list all dir including "*/.")
+ls -l (list with long format -shows permissions)
+ls -f (append indicator (one of */=>@1)to entries)
+ls -lh (this command will show you the file size in human readable format)
+ls -r (list in reverse order)
+ls -i (list files in inode(index)numbers)
+ls -ltr (view reverse output order by date)
+ls -t (sort by time and date)
+ls -n (it is used to print out group id and owner id instaead of their names)
+ls -m (a list of entires seperated by commas should fill the width.)
+ls -g (this alklow you to execute the owner and group information coloums)
+ls -q (force printing of non-ghraphic character in file name as the character"?!,")
+ls -Q (place double quation around the entry name)
+*************************************************************************
+
+
+/ it stands for FORWARDS SLASH
+\ it stands for BACKWARD SLASH
+
+*IN WINDOWS DEFAULT USER ARE ADMIN(ADMINISTARATOR) he we can do what ever we want
+	***IN WINDOWS***
+				C
+DESKTOPS	DOWNLODS	LOCALDISK D	LOCALDISK E 	ETC
+
+*IN LINUX default user are 1)root(like a ADMIN)(he can insttall,delet,create sof)
+			  2)ec2-user (normal user)
+***IN LINUX****
+			/
+root	home	opt	mnt	bin	sbin	tmp 
+
+*IN LINUX 
+syntax: cd / then ls
+output : bin dev home lib media opt root sbin sys usr boot etc lib local mnt proc run srv tmp var(it will display available files in "/")
+
+bin= it contains commands used by all user (including root)
+
+sbin = it stands for super bin = it will also contains the commands these commands only used by root
+
+opt= optinal = we can store the tirdparty softwares(optinal agreement)
+mnt=mount= drives(Gdrives all under comp under mnt)
+etc= it contains all configuration files
+
+proc =it contains all the process
+
+boot = to start the server/bootup it requires many file to run =bootable files
+
+var = variables=it contains all variable/log
+
+home
+
+root
+
+*AS A NORMAL USER WE CAN SWITCH TO ANY LOCATION. BUT WHERE EVER TO CREATE FILE(OR)FOLDER AND DELETE A FILE (OR)FOLDER WILL NOT POSSIBLE BECAUSE EC2-USER IS ANORMAL USER.
+*FOR A NORMAL USER HAVE "HOME" IN LINUX(/) WE CAN CREATE (OR)DELETE A FILE OR FOLDERIN NORMAL USER =/HOME/EC2-USER
+***what is a default home dir for normal user?
+	/home/username
+***what is default home dir for root user?
+	/root
+sudo -i (is a command used for to switch normal user to root user)
+for normal user(ec2-user) $, root user #
+***root user can crete and delete any file or folder where ever we want
+*EX:if we want to create a file in opt 
+	login to ec2 service in putty
+	switch to root user sudo -i
+	 cd / (changes directory to "/")
+	pwd (it shows present working directory)
+	ls (to list all files/folder in "/")
+	cd /opt (change dirctory to opt)
+	touch <filename> (to create a empty file)
+	ls (it list the file in opt now you can see the file which was created by u)
+EX:if we want to create a folder in opt 
+	login to ec2 service in putty
+	switch to root user sudo -i
+	 cd / (change directory to /)
+	pwd (it shows present working directory)
+	ls (to list all files/folders in "/")
+	cd /opt (change dirctory to opt)
+	mkdir <dirname> (to create a  "directory/folder")
+	ls (it list the file/folders in opt now you can see the folder which was created by u.)
+*****PATHS*****
+	1.Absolute Path: it like a "complete path" (ex: cd/opt/filename)
+	2.Relative Path: it like a "near Path" (ex: if we are in opt dir/fold we can enter a file in opt by giving command cd <file/foldername> we can go to that location of file/folder i,e Relative/near Path)
+EX1: if PWD is / we want to go to sbin directory then,
+	synatx: cd sbin  (because / path is a sbin dir) that is called Relative/Near by Path
+EX2:if PWD is any where we want to go to sbin then,
+	syntax:cd /sbin/ then ls (to list files) 	that is called Absolute/Complete Path
+
+******USERS******
+1.EC2-USER/NORMAL USER($)
+2.ROOT USER(#)
+* FOR NORMAL USER are less permission compared to ROOT USER
+*only ROOT USER will create/Delete a user in any server(having full permissions)
+EX: CREATE A USER IN SERVER WHERE AS USER NAME:govardhan, password:govardhan
+	syntax: useradd govardhan
+	        passwd govardhan
+EX: DELETE A USER IN SERVER WHERE AS USER NAME:govardhan
+	syntax: userdel govardhan
+
+govardhan:X:	1001:1001	:/home/govardhan:	/bin/bash
+   user		usrid groupid		dirctory	  shell
+where X we can write any thing ex: hi, iam a devops engineer
+0 - 1000 system cretes users
+1001 userid
+1001 group id
+
+EX: IF WE WANT TO MODIFY USERNAME AND USER ID
+	syntax: usermod -u(new userid)username //to modify particular user id
+	syntax:usermod -l(newusername)(oldusername) //to modify username
+** TO CHECK MEMORY/RAM STATUS
+	syntax:free -h [h stands for human readable format]
+	output: it will display storage in MB
+*** 1	*	8GIB
+   RAM		ROM(HARD DISK or DISK)
+*** Command to check disk file system
+	syntax: df -h [ human readable format] df- disk file system
+*** to check disk utilization
+	syntax:du -h /opt
+
+*****FILE PERMISSIONS*****
+OWNER(U) : OWNER WILL HAVE FULL PERMISSION TO READ(r),WRITE(w) AND EXECUTE(x) compared others like Groups(teammates),Others
+Group(G)(Teammates): groups will have only READ(r) AND EXECUTE(x) permissions only
+Others(O)(clients): Others will have only READ(r) AND EXECUTE(x) permissions only
+
+IN MATHEMATICAL FORMAT 
+	READ(r)		=4
+	WRITE(w)	=2
+	EXECUTE(x)	=1
+
+in any location AFTER ll command it represent
+FOR DIRECTORIES(d)		rwx	r-x	r-x	//in mathematical 	4+2+1	4+1	4+1	=755
+FOR FILES(-)			rw-	r--	r--	//in mathematiocal	4+2	4	4	=644
+
+WHILE CREATING A DIR /FOLDER AND FILE PERMISSION WILL BE
+	DEFAULT PERMISSIONS OF DIR = 755 (777 -fullmpermission for owner,group and others)
+	DEFAULT PERMISSION OF FILE = 644 (666 -fullmpermission for owner,group and others)
+umask =022(default untill unless we change)
+mkdir <dirname> = <dirname> = 777 - 022 = 755
+touch <file name> = <filename> =  666 -022 = 644
+***CHMOD***
+*chmod = change modification for file/dir or folder
+*to change a file/ directory "permission" we use 
+	syntax: chmod 777 <dirname> [full permission for owners,group,others for a directory]
+	syntax: chmod 666 <filename> [full permission for owners,group,others for a file]
+	syntax: chmod 600 <file/dirname> [full permission for owners file/directory]
+*to change a file/ directory "ownership" we use
+	syntax: chmod 	root	root1	<file/dirname>
+			oldown	newowner	
